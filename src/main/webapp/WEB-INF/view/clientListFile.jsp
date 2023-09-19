@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: ClaudioCristianLopez
@@ -14,5 +15,30 @@
 
   Aca mostraremos a los clientes del GARAGE
 
+    <table>
+
+            <tr>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Email</th>
+
+            </tr>
+
+            <c:forEach var="clientTMP" items="${garageClientsAttributes}">
+
+                <tr>
+                    <td>${clientTMP.nombre}</td>
+                    <td>${clientTMP.apellido}</td>
+                    <td>${clientTMP.email}</td>
+
+                </tr>
+
+
+            </c:forEach>
+
+
+    </table>
+
 </body>
 </html>
+<<
