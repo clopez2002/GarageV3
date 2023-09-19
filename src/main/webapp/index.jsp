@@ -7,6 +7,12 @@
 <body>
 <h1><%= "Hello World!" %></h1>
 <br/>
-<a href="hello-servlet">Hello Servlet</a>
+
+  <!-- vamos a comentar esta linea y dejaremos la que nos redirecciona al inicio
+  <a href="Servlet">Click AQUI!!</a>
+  -->
+
+  <% response.sendRedirect("garageHomeURL/clientListURL"); %>
+
 </body>
 </html>
