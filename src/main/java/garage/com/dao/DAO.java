@@ -7,4 +7,8 @@ import java.util.List;
 public interface DAO {
 
     public List<Client> getClientList ();
+
+    void insertOneNewClient(Client theClient);
+
+    Client getOneClientById(int id);
 }

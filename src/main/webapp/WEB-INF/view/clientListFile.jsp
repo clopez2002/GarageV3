@@ -33,9 +33,15 @@
                 <th>Modelo</th>
                 <th>Anio</th>
                 <th>Patente</th>
+                <th>Update</th>
             </tr>
 
             <c:forEach var="clientTMP" items="${garageClientsAttributes}">
+
+                <!-- aca: var="linkUpdate" debe coincidor como en el boton de abajo-->
+                <c:url var="linkUpdate" value="/garageHomeURL/updateClientURL">
+                    <c:param name="clientID" value="${clientTMP.id}"/>
+                </c:url>
 
                 <tr>
                     <td>${clientTMP.nombre}</td>
@@ -49,6 +55,10 @@
                     <td>${clientTMP.modelo}</td>
                     <td>${clientTMP.anio}</td>
                     <td>${clientTMP.patente}</td>
+
+                    <!-- Aca va el boton para ACTUALIZAR registros, uno por cada cliente-->
+                    <td><a href="${linkUpdate}"><input type="button" value="Update Client"/></a> </td>
+
                 </tr>
 
 
@@ -59,8 +69,12 @@
 
     <br/>
 
+
+    <!--  esto del DIV es para que el boton quede a la mitad de la pagina -->
+
         <div style="text-align: center">
         <input type="button" value="Add Client" onclick="window.location.href='addNewClientURL'; return false;"/>
         </div>
+
 </body>
 </html>
