@@ -17,6 +17,8 @@
 </head>
 <body>
 
+    <h1> Garage Client List</h1>
+
     <table border="1">
 
             <tr>
@@ -55,6 +57,10 @@
 
     </table>
 
+    <br/>
+
+        <div style="text-align: center">
+        <input type="button" value="Add Client" onclick="window.location.href='addNewClientURL'; return false;"/>
+        </div>
 </body>
 </html>
-<<
