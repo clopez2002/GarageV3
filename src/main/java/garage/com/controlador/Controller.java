@@ -100,21 +100,32 @@ public class Controller {
 
 /*******************************************************************/
 
-//
-//String output = "displayClientInformation";
-//
-//    /*
-//        em la pagina obtenemos:  <input type="text" name="plateToSearch"> este parametro plateToSearch
-//        es el string que nesesitamos...
-//     */
-//    int plate = Integer.parseInt(request.getParameter("plateToSearch"));
-//
-//    // buscamos el runner
-//    Client oneClient = oneClient = daoClient.getClientByPlate(plate);
-//        if (oneClient == null)
-//            return "noClientFoundFile";
-//
-//        theModel.addAttribute("Attributes", oneClient);
-//
-//        return output;
+    @RequestMapping("/processClientDataURL")
+    public String processClientDataMethod(HttpServletRequest request, Model theModel){
+
+        String output = "displayClientInformation";
+        System.out.println("salida: "+ output);
+
+        /*
+            em la pagina obtenemos:  <input type="text" name="plateToSearch"> este parametro plateToSearch
+            es el string que nesesitamos...
+         */
+        //int plate = Integer.parseInt(request.getParameter("plateToSearch"));
+        String plate = request.getParameter("plateToSearch");
+        System.out.println("patente ingresada: " + plate);
+
+        // buscamos el cliente
+        Client oneClient = oneClient = daoClient.getClientByPlate(plate);
+        if (oneClient == null)
+            return "noClientFoundFile";
+
+        System.out.println(oneClient.getNombre());
+
+        theModel.addAttribute("unClienteAttibutos", oneClient);
+
+        return output;
+
+    }
+
+
 }

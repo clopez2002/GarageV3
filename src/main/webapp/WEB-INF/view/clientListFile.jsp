@@ -52,7 +52,6 @@
                 </c:url>
 
 
-
                 <tr>
                     <td>${clientTMP.nombre}</td>
                     <td>${clientTMP.apellido}</td>

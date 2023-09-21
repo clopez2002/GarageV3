@@ -96,19 +96,15 @@ public class daoClient implements DAO{
 
     @Override
     @Transactional
-    public Client getClientByPlate(int plate) {
+    public Client getClientByPlate(String plate) {
 
         // obtener la sesion
 
         Session mySession = sessionFactory.getCurrentSession();
 
-        String patente = String.valueOf(plate);
-
-        String query = "SELECT client from Client client WHERE patente="+patente;
-
-        Client theClient = (Client) mySession.createQuery(query).uniqueResult();
-
-
+        Query query = mySession.createQuery("select cliente from Client cliente where cliente.patente like :patente");
+        query.setParameter("patente", plate );
+        Client theClient = (Client) query.uniqueResult();
         return theClient;
     }
 

@@ -20,7 +20,7 @@
     <!-- no podemos usar @RequestParam, dado que no recibimos cliente.. recibimos la patenten -->
 
     <div style="text-align: center">
-        <form action="searchClientURL" method="get">
+        <form action="processClientDataURL" method="get">
 
             <input type="text" name="plateToSearch">
             <input type="submit">
