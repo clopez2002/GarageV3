@@ -50,8 +50,10 @@ public class daoClient implements DAO{
         Session mySession = sessionFactory.getCurrentSession();
 
         // insertar el cliente
+        // save guarda el cliente, usamos otra sentencia que tambien actualiza
+        //mySession.save(theClient);
 
-        mySession.save(theClient);
+        mySession.saveOrUpdate(theClient);
 
     }
 

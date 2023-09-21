@@ -78,7 +78,7 @@
             </tr>
 
             <tr>
-              <td colspan="2"><input type="submit" value="Insert"></td>
+              <td colspan="2"><input type="submit" value="Update"></td>
             </tr>
 
         </table>
