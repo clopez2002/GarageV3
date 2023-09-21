@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
 @org.springframework.stereotype.Controller
@@ -90,5 +91,30 @@ public class Controller {
 
 
 /*******************************************************************/
-/*******************************************************************/;
+
+    @RequestMapping("/searchClientURL")
+    public String searchClientMethod (HttpServletRequest request, Model theModel){
+
+        return "searchClientFile";
+    }
+
+/*******************************************************************/
+
+//
+//String output = "displayClientInformation";
+//
+//    /*
+//        em la pagina obtenemos:  <input type="text" name="plateToSearch"> este parametro plateToSearch
+//        es el string que nesesitamos...
+//     */
+//    int plate = Integer.parseInt(request.getParameter("plateToSearch"));
+//
+//    // buscamos el runner
+//    Client oneClient = oneClient = daoClient.getClientByPlate(plate);
+//        if (oneClient == null)
+//            return "noClientFoundFile";
+//
+//        theModel.addAttribute("Attributes", oneClient);
+//
+//        return output;
 }

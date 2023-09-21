@@ -88,7 +88,16 @@
 
         <div style="text-align: center">
         <input type="button" value="Add Client" onclick="window.location.href='addNewClientURL'; return false;"/>
+
+            <!-- Aca buscamos cliente por patente -->
+        <input type="button" value="Search Client" onclick="window.location.href='searchClientURL'; return false;"/>
+
+
         </div>
+
+
+
+
 
 </body>
 </html>
