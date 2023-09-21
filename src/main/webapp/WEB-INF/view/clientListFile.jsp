@@ -34,14 +34,24 @@
                 <th>Anio</th>
                 <th>Patente</th>
                 <th>Update</th>
+                <th>Delete</th>
             </tr>
 
             <c:forEach var="clientTMP" items="${garageClientsAttributes}">
+
 
                 <!-- aca: var="linkUpdate" debe coincidor como en el boton de abajo-->
                 <c:url var="linkUpdate" value="/garageHomeURL/updateClientURL">
                     <c:param name="clientID" value="${clientTMP.id}"/>
                 </c:url>
+
+
+                <!-- aca: var="linkDelete" debe coincidor como en el boton de abajo-->
+                <c:url var="linkDelete" value="/garageHomeURL/deleteClientURL">
+                    <c:param name="clientID" value="${clientTMP.id}"/>
+                </c:url>
+
+
 
                 <tr>
                     <td>${clientTMP.nombre}</td>
@@ -58,6 +68,10 @@
 
                     <!-- Aca va el boton para ACTUALIZAR registros, uno por cada cliente-->
                     <td><a href="${linkUpdate}"><input type="button" value="Update Client"/></a> </td>
+
+                    <!-- Aca va el boton de DELETE registros, uno x cada cliente -->
+                    <td><a href="${linkDelete}"><input type="button" value="Delete Client"
+                        onclick="if (!(confirm('Esta seguro de eliminar el usuario?'))) return false"/></a> </td>
 
                 </tr>
 

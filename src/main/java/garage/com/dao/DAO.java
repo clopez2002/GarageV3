@@ -11,4 +11,6 @@ public interface DAO {
     void insertOneNewClient(Client theClient);
 
     Client getOneClientById(int id);
+
+    void deleteClientById(int id);
 }
